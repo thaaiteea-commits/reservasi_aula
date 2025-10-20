@@ -2,7 +2,7 @@
 $host = "localhost";
 $db = "aula_db";         // ganti sesuai nama database kamu
 $user = "root";          // username database
-$pass = "";              // password database
+$pass = "rpl12345";              // password database
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
