@@ -1,0 +1,16 @@
+:root {
+    --primary-color: #8fc1b5;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
