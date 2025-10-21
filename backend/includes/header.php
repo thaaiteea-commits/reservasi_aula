@@ -1,4 +1,4 @@
-<?php include '../auth.php'; ?>
+<?php include 'auth.php'; ?>
 <!DOCTYPE html>
 <html><head><title>Admin Panel</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"></head>
