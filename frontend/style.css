@@ -1,0 +1,131 @@
+/* ===== Global Style ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffaf6;
+    color: #4a3f35;
+}
+
+header {
+    background-color: #fceae8;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4a3f35;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #c06b5a;
+}
+
+main {
+    padding: 40px;
+    text-align: center;
+}
+
+footer {
+    background-color: #fceae8;
+    text-align: center;
+    padding: 15px 0;
+    color: #4a3f35;
+    margin-top: 40px;
+}
+
+/* ===== Home ===== */
+.home-hero {
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../img/aula-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    border-radius: 20px;
+}
+.home-hero h2 {
+    font-size: 2.5rem;
+}
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.service-card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== Gallery ===== */
+.gallery-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 20px;
+}
+.gallery-item img {
+    border-radius: 15px;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ===== Reservasi ===== */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+button {
+    background-color: #c06b5a;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover {
+    background-color: #a85a4c;
+}
+
+/* ===== Kontak ===== */
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.review {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
