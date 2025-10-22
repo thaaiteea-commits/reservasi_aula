@@ -2,7 +2,7 @@
 $host = "localhost";
 $db = "aula_db";
 $user = "root"; // sesuaikan
-$pass = "";     // sesuaikan
+$pass = "rpl12345";     // sesuaikan
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
