@@ -1,5 +1,4 @@
 <?php
-// index.php
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 $file = "pages/" . $page . ".php";
 ?>
@@ -9,11 +8,11 @@ $file = "pages/" . $page . ".php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AULA Interior & Architecture</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- ===== HEADER ===== -->
     <header>
         <div class="logo">AULA</div>
         <nav>
@@ -26,20 +25,20 @@ $file = "pages/" . $page . ".php";
         </nav>
     </header>
 
-    <!-- Konten Dinamis -->
+    <!-- ===== KONTEN DINAMIS ===== -->
     <main>
         <?php
-            if (file_exists($file)) {
-                include($file);
-            } else {
-                include("pages/home.php");
-            }
+        if (file_exists($file)) {
+            include $file;
+        } else {
+            echo "<div class='not-found'>Halaman tidak ditemukan.</div>";
+        }
         ?>
     </main>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer>
-        <p>&copy; <?= date("Y") ?> Aula Interior Studio. All rights reserved.</p>
+        <p>&copy; <?php echo date('Y'); ?> AULA Interior Studio. All rights reserved.</p>
     </footer>
 
 </body>
