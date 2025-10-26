@@ -1,19 +1,29 @@
-<section>
+<section class="content">
     <h2>Formulir Reservasi</h2>
-    <p>Isi data berikut untuk melakukan pemesanan aula.</p>
-
-    <form action="#" method="post">
-        <input type="text" name="nama" placeholder="Nama Lengkap" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="telepon" placeholder="No. Telepon" required>
-        <select name="tipe_aula" required>
-            <option value="">Pilih Tipe Aula</option>
-            <option value="vip">Aula VIP</option>
-            <option value="reguler">Aula Reguler</option>
-            <option value="seminar">Aula Seminar</option>
+    <form action="" method="post" class="form">
+        <label>Nama</label>
+        <input type="text" name="nama" required>
+        <label>Email</label>
+        <input type="email" name="email" required>
+        <label>Jenis Desain</label>
+        <select name="kategori">
+            <option>Ruang Tamu</option>
+            <option>Kamar Tidur</option>
+            <option>Dapur</option>
         </select>
-        <input type="date" name="tanggal" required>
-        <textarea name="pesan" rows="4" placeholder="Catatan tambahan..."></textarea>
-        <button type="submit">Kirim Reservasi</button>
+        <label>Pesan</label>
+        <textarea name="pesan" rows="4"></textarea>
+        <button type="submit" class="btn">Kirim Reservasi</button>
     </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nama = htmlspecialchars($_POST['nama']);
+        $email = htmlspecialchars($_POST['email']);
+        $kategori = htmlspecialchars($_POST['kategori']);
+        $pesan = htmlspecialchars($_POST['pesan']);
+
+        echo "<div class='alert'>Terima kasih, <b>$nama</b>! Reservasi Anda untuk desain <b>$kategori</b> telah diterima.</div>";
+    }
+    ?>
 </section>

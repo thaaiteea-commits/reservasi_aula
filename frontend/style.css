@@ -1,142 +1,368 @@
+/* =========================================================
+   STYLE.CSS - AULA INTERIOR & ARCHITECTURE
+   Theme: Dark Elegant Gold
+   Author: ChatGPT x You ✨
+   ========================================================= */
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Open+Sans:wght@400;500;600&display=swap');
+
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: #0f0f0f;
-    color: #f5f5f5;
+    background-color: #0f0f0f;
+    color: #f1f1f1;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
 }
 
+/* ================= HEADER ================= */
 header {
+    width: 100%;
+    background: rgba(20, 20, 20, 0.95);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #1a1a1a;
-    padding: 20px 60px;
+    padding: 18px 80px;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 1000;
+    border-bottom: 1px solid #2b2b2b;
 }
 
-header .logo {
-    font-size: 28px;
-    font-weight: bold;
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8em;
     color: #d4af37;
+    letter-spacing: 2px;
 }
 
 nav ul {
-    display: flex;
     list-style: none;
-    gap: 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #ccc;
-    transition: 0.3s;
-}
-
-nav a:hover, nav a.active {
-    color: #d4af37;
-}
-
-.hero {
-    background: url('assets/img/hero.jpg') center/cover no-repeat;
-    min-height: 80vh;
     display: flex;
-    align-items: center;
+    gap: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #d4af37;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 3px;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    position: relative;
+    height: 90vh;
+    background: url('assets/img/hero.jpg') center/cover no-repeat;
+    display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 40px;
+    color: #fff;
 }
-
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.55);
+}
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
 .hero-text h1 {
-    font-size: 48px;
-}
-
-.hero-text span {
+    font-size: 2.8em;
+    font-family: 'Cinzel', serif;
     color: #d4af37;
 }
-
+.hero-text h1 span {
+    color: #fff;
+}
 .hero-text p {
-    margin: 15px 0;
+    margin-top: 15px;
+    font-size: 1.1em;
     color: #ddd;
 }
-
-.btn {
+.hero-text .btn {
+    margin-top: 25px;
     display: inline-block;
     background: #d4af37;
     color: #000;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 28px;
+    border-radius: 30px;
     text-decoration: none;
-    transition: 0.3s;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+.hero-text .btn:hover {
+    background: #f5dc91;
 }
 
-.btn:hover {
-    background: #b6932b;
-}
-
-.content, .portfolio {
-    padding: 60px;
+/* ================= PORTFOLIO SECTION ================= */
+.portfolio {
+    padding: 80px 60px;
     text-align: center;
 }
-
-.grid {
+.portfolio h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+    color: #d4af37;
+    margin-bottom: 40px;
+}
+.portfolio .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+.portfolio .card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+.portfolio .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 15px rgba(212,175,55,0.2);
+}
+.portfolio .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+.portfolio .card h3 {
+    padding: 15px;
+    font-size: 1.2em;
+    color: #f4f4f4;
 }
 
-.card {
-    background: #1c1c1c;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 20px;
+/* ================= LOGIN PAGE ================= */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: #1b1b1b;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+.login-container h2 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    margin-bottom: 25px;
+}
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: #2a2a2a;
+    color: #fff;
+}
+.login-container button {
+    background: #d4af37;
+    color: #000;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
     transition: 0.3s;
 }
-
-.card:hover {
-    transform: translateY(-5px);
+.login-container button:hover {
+    background: #f3da7b;
+}
+.error {
+    color: #ff7675;
+    margin-bottom: 10px;
 }
 
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+/* ================= KATEGORI SECTION (SLIDER) ================= */
+.kategori-section {
+    text-align: center;
+    padding: 80px 0;
+    background-color: #0f0f0f;
+    color: #f4f4f4;
+}
+.kategori-section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2em;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+.kategori-section p {
+    color: #ccc;
+    margin-bottom: 40px;
 }
 
-.form {
-    max-width: 500px;
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 85%;
+    max-width: 1100px;
     margin: 0 auto;
+}
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+.slide img {
+    width: 100%;
+    border-radius: 15px;
+    height: 450px;
+    object-fit: cover;
+    filter: brightness(80%);
+}
+.slide-info {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    background: rgba(0,0,0,0.6);
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: left;
+}
+.slide-info h3 {
+    font-size: 1.6em;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.slide-info p {
+    color: #ddd;
+    font-size: 0.9em;
+}
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    color: #fff;
+}
+.badge.vip {
+    background: linear-gradient(90deg, #d4af37, #f7e07f);
+    color: #000;
+}
+.badge.reguler {
+    background: #333;
+}
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(255,255,255,0.5);
+    color: #000;
+}
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
+
+/* ================= RESERVASI SECTION ================= */
+.reservasi-page {
+    width: 80%;
+    margin: 60px auto;
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+.reservasi-page h2 {
+    color: #d4af37;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.reservasi-page form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
-input, select, textarea {
-    padding: 10px;
+.reservasi-page label {
+    color: #ddd;
+}
+.reservasi-page input,
+.reservasi-page textarea {
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-}
-
-.alert {
-    margin-top: 20px;
-    background: #222;
-    padding: 15px;
     border-radius: 8px;
-    color: #d4af37;
+    background: #2a2a2a;
+    color: #fff;
+}
+.reservasi-page button {
+    margin-top: 10px;
+    background: #d4af37;
+    color: #000;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.reservasi-page button:hover {
+    background: #f1d36b;
 }
 
+/* ================= FOOTER ================= */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #1a1a1a;
-    margin-top: 40px;
-    color: #aaa;
+    padding: 20px 0;
+    background: #111;
+    color: #888;
+    font-size: 0.9em;
+    border-top: 1px solid #222;
+    margin-top: 60px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 30px;
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .hero-text h1 {
+        font-size: 2em;
+    }
+    .slide-info {
+        bottom: 15px;
+        left: 20px;
+        padding: 10px 15px;
+    }
+    .reservasi-page {
+        width: 95%;
+        padding: 25px;
+    }
 }
