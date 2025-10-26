@@ -1,40 +1,46 @@
 <?php
+// index.php
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+$file = "pages/" . $page . ".php";
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservasi Aula Estetik</title>
+    <title>AULA Interior & Architecture</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Header -->
     <header>
-        <h1>Reservasi Aula Estetik</h1>
+        <div class="logo">AULA</div>
         <nav>
             <ul>
-                <li><a href="?page=home">Home</a></li>
-                <li><a href="?page=gallery">Gallery</a></li>
-                <li><a href="?page=reservasi">Reservasi</a></li>
-                <li><a href="?page=kontak">Kontak</a></li>
+                <li><a href="?page=home" class="<?= $page == 'home' ? 'active' : '' ?>">Home</a></li>
+                <li><a href="?page=kategori" class="<?= $page == 'kategori' ? 'active' : '' ?>">Kategori</a></li>
+                <li><a href="?page=reservasi" class="<?= $page == 'reservasi' ? 'active' : '' ?>">Reservasi</a></li>
+                <li><a href="?page=kontak" class="<?= $page == 'kontak' ? 'active' : '' ?>">Kontak</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Konten Dinamis -->
     <main>
         <?php
-        $file = "pages/$page.php";
-        if (file_exists($file)) {
-            include($file);
-        } else {
-            echo "<p>Halaman tidak ditemukan.</p>";
-        }
+            if (file_exists($file)) {
+                include($file);
+            } else {
+                include("pages/home.php");
+            }
         ?>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Reservasi Aula Estetik. All rights reserved.</p>
+        <p>&copy; <?= date("Y") ?> Aula Interior Studio. All rights reserved.</p>
     </footer>
+
 </body>
 </html>

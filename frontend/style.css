@@ -1,131 +1,142 @@
-/* ===== Global Style ===== */
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    background-color: #fffaf6;
-    color: #4a3f35;
+}
+
+body {
+    background: #0f0f0f;
+    color: #f5f5f5;
 }
 
 header {
-    background-color: #fceae8;
-    text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 20px 60px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d4af37;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
+    list-style: none;
     gap: 30px;
 }
 
 nav a {
     text-decoration: none;
-    color: #4a3f35;
-    font-weight: 500;
-    transition: color 0.3s;
+    color: #ccc;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    color: #c06b5a;
+nav a:hover, nav a.active {
+    color: #d4af37;
 }
 
-main {
-    padding: 40px;
-    text-align: center;
-}
-
-footer {
-    background-color: #fceae8;
-    text-align: center;
-    padding: 15px 0;
-    color: #4a3f35;
-    margin-top: 40px;
-}
-
-/* ===== Home ===== */
-.home-hero {
-    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../img/aula-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 20px;
-    border-radius: 20px;
-}
-.home-hero h2 {
-    font-size: 2.5rem;
-}
-.services {
+.hero {
+    background: url('assets/img/hero.jpg') center/cover no-repeat;
+    min-height: 80vh;
     display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    text-align: center;
+    padding: 40px;
 }
-.service-card {
-    background: #fff;
+
+.hero-text h1 {
+    font-size: 48px;
+}
+
+.hero-text span {
+    color: #d4af37;
+}
+
+.hero-text p {
+    margin: 15px 0;
+    color: #ddd;
+}
+
+.btn {
+    display: inline-block;
+    background: #d4af37;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b6932b;
+}
+
+.content, .portfolio {
+    padding: 60px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
     padding: 20px;
-    width: 250px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    transition: 0.3s;
 }
-.service-card:hover {
+
+.card:hover {
     transform: translateY(-5px);
 }
 
-/* ===== Gallery ===== */
-.gallery-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    padding: 20px;
-}
-.gallery-item img {
-    border-radius: 15px;
-    width: 300px;
+.card img {
+    width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
-/* ===== Reservasi ===== */
-form {
+.form {
     max-width: 500px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
+
 input, select, textarea {
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-button {
-    background-color: #c06b5a;
-    color: white;
     border: none;
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-button:hover {
-    background-color: #a85a4c;
+    border-radius: 5px;
 }
 
-/* ===== Kontak ===== */
-.map-container iframe {
-    width: 100%;
-    height: 300px;
-    border: none;
-    border-radius: 15px;
-    margin-bottom: 20px;
-}
-.review {
-    background: #fff;
-    border-radius: 15px;
-    padding: 20px;
+.alert {
     margin-top: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: #222;
+    padding: 15px;
+    border-radius: 8px;
+    color: #d4af37;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+    margin-top: 40px;
+    color: #aaa;
 }

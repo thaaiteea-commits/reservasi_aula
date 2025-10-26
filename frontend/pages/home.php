@@ -1,24 +1,25 @@
-<section class="home-hero">
-    <h2>Selamat Datang di Aula Estetik</h2>
-    <p>Tempat sempurna untuk acara istimewa Anda — dari pernikahan hingga seminar elegan.</p>
+<section class="hero">
+    <div class="hero-text">
+        <h1>Selamat Datang di <span>AULA</span></h1>
+        <p>Kami menghadirkan desain interior elegan dan modern untuk ruang impian Anda.</p>
+        <a href="?page=reservasi" class="btn">Buat Reservasi</a>
+    </div>
 </section>
 
-<section class="about">
-    <h3>Tentang Kami</h3>
-    <p>Kami menyediakan aula dengan desain modern dan fasilitas lengkap untuk berbagai jenis acara.</p>
-</section>
-
-<section class="services">
-    <div class="service-card">
-        <h4>Wedding Hall</h4>
-        <p>Aula mewah dengan dekorasi elegan untuk hari bahagia Anda.</p>
-    </div>
-    <div class="service-card">
-        <h4>Meeting Room</h4>
-        <p>Ruang profesional untuk rapat dan seminar berkelas.</p>
-    </div>
-    <div class="service-card">
-        <h4>Event Space</h4>
-        <p>Tempat fleksibel untuk ulang tahun, konser mini, dan lainnya.</p>
+<section class="portfolio">
+    <h2>Portofolio Kami</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="assets/img/interior1.jpg" alt="">
+            <h3>Ruang Tamu Modern</h3>
+        </div>
+        <div class="card">
+            <img src="assets/img/interior2.jpg" alt="">
+            <h3>Desain Kamar Elegan</h3>
+        </div>
+        <div class="card">
+            <img src="assets/img/interior3.jpg" alt="">
+            <h3>Konsep Minimalis</h3>
+        </div>
     </div>
 </section>
