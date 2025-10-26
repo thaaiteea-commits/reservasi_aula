@@ -39,7 +39,7 @@
 <!-- ================= ABOUT SECTION ================= -->
 <section class="about">
   <div class="about-content">
-    <img src="assets/img/about.jpg" alt="Tentang Kami">
+    <img src="../aset/img/wedding.png" alt="Tentang Kami">
     <div class="about-text">
       <h2>Tentang Kami</h2>
       <p>
@@ -58,11 +58,11 @@
   <h2>Galeri Aula</h2>
   <div class="gallery-slider">
     <div class="slides">
-      <img src="assets/img/gallery1.jpg" alt="Aula 1">
-      <img src="assets/img/gallery2.jpg" alt="Aula 2">
-      <img src="assets/img/gallery3.jpg" alt="Aula 3">
-      <img src="assets/img/gallery4.jpg" alt="Aula 4">
-      <img src="assets/img/gallery5.jpg" alt="Aula 5">
+      <div class="slide"><img src="../aset/img/1.jpg" alt="Aula 1"></div>
+      <div class="slide"><img src="../aset/img/2.jpg" alt="Aula 2"></div>
+      <div class="slide"><img src="../aset/img/3.jpg" alt="Aula 3"></div>
+      <div class="slide"><img src="../aset/img/4.jpg" alt="Aula 4"></div>
+      <div class="slide"><img src="../aset/img/5.jpg" alt="Aula 5"></div>
     </div>
 
     <button class="gallery-btn prev">&#10094;</button>
@@ -70,26 +70,28 @@
   </div>
 </section>
 
-<!-- Tambahkan script slider -->
 <script>
-  const slides = document.querySelector('.gallery .slides');
-  const images = document.querySelectorAll('.gallery .slides img');
-  const prevBtn = document.querySelector('.gallery .prev');
-  const nextBtn = document.querySelector('.gallery .next');
+  const slidesContainer = document.querySelector('.gallery .slides');
+  const slideCount = document.querySelectorAll('.gallery .slide').length;
+  const prevButton = document.querySelector('.gallery .prev');
+  const nextButton = document.querySelector('.gallery .next');
   let index = 0;
+  let isSliding = false;
 
   function showSlide(n) {
-    index = (n + images.length) % images.length;
-    slides.style.transform = `translateX(-${index * 100}%)`;
+    if (isSliding) return;
+    isSliding = true;
+    index = (n + slideCount) % slideCount;
+    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+    setTimeout(() => { isSliding = false; }, 1000);
   }
 
-  nextBtn.addEventListener('click', () => showSlide(index + 1));
-  prevBtn.addEventListener('click', () => showSlide(index - 1));
+  nextButton.addEventListener('click', () => showSlide(index + 1));
+  prevButton.addEventListener('click', () => showSlide(index - 1));
 
-  // Auto slide every 4s
-  setInterval(() => showSlide(index + 1), 4000);
+  // Auto-slide tiap 6 detik
+  setInterval(() => showSlide(index + 1), 6000);
 </script>
-
 
 <!-- ================= SERVICES SECTION ================= -->
 <section class="services">

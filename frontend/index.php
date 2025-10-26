@@ -41,5 +41,7 @@ $file = "pages/" . $page . ".php";
         <p>&copy; <?php echo date('Y'); ?> AULA Interior Studio. All rights reserved.</p>
     </footer>
 
+    
+ 
 </body>
 </html>
